@@ -1,6 +1,6 @@
 from rest_framework.routers import SimpleRouter
 from rest_framework_nested import routers
-from main.views import BlogImageViewSet, BlogViewSet, CommentViewSet, MyBlogViewSet, MyProfile , LikeToggleView , Test
+from main.views import BlogImageViewSet, BlogViewSet, CommentViewSet, MyBlogViewSet, MyProfile , LikeToggleView 
 from django.urls import include,path
 
 

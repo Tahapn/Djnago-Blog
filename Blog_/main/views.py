@@ -73,7 +73,10 @@ class CommentViewSet(ModelViewSet):
     
 
     def get_serializer_context(self):
-        return {'blog_id': self.kwargs['blog_pk']}
+
+        profile = Profile.objects.only('id').get(user= self.request.user.id)
+        profile_id = profile.id
+        return {'blog_id': self.kwargs['blog_pk'],'profile_id':profile_id}
 
     
 class LikeToggleView(generics.CreateAPIView):

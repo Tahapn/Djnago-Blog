@@ -60,7 +60,9 @@ class CommentSerializer(ModelSerializer):
 
     def create(self, validated_data):
         blog_id = self.context['blog_id']
-        return Comment.objects.create(blog_id = blog_id, ** validated_data)
+        profile_id = self.context['profile_id']
+        print(profile_id)
+        return Comment.objects.create(profile_id = profile_id , blog_id = blog_id, **validated_data)
     
 
 class LikeSerializer(serializers.ModelSerializer):
